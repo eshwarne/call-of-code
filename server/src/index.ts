@@ -1,16 +1,13 @@
-// import {MikroORM} from "@mikro-orm/core"
-import dotenv from "dotenv"
-dotenv.config()
+import {MikroORM} from "@mikro-orm/core"
+import { CodeSnippets } from "./models/CodeSnippets"
+import mikroORMConfig from "./mikro-orm.config"
+
 console.log(process.env.POSTGRES_PASSWORD)
 
-// const startUp = async () =>{
-//      const orm = MikroORM.init({
-//         dbName:"callofcode",
-//         user:process.env.POSTGRES_USER,
-//         password:process.env.POSTGRES_PASSWORD,
-//         debug:true
-//     })
-//     orm
-// }
+const startUp = async () =>{
+     const orm = await MikroORM.init(mikroORMConfig)
+    const codeSnippet = orm.em.create(CodeSnippets,{code:"",title:"Samplecode",description:"this is a sample code"})
+    await orm.em.persistAndFlush(codeSnippet)
+}
 
-// startUp()
+startUp().catch(err => console.log(err))
