@@ -5,8 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const CodeSnippets_1 = require("./models/CodeSnippets");
 const dotenv_1 = __importDefault(require("dotenv"));
+const path_1 = __importDefault(require("path"));
 dotenv_1.default.config();
 exports.default = {
+    migrations: {
+        path: path_1.default.join(__dirname, './migrations'),
+        pattern: /^[\w-]+\d+\.[tj]s$/
+    },
     entities: [CodeSnippets_1.CodeSnippets],
     dbName: "callofcode",
     type: "postgresql",

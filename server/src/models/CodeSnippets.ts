@@ -5,15 +5,15 @@ export class CodeSnippets{
     @PrimaryKey()
     id!:number
 
-    @Property()
+    @Property({type:"text"})
     title!:string
 
-    @Property()
+    @Property({type:"text"})
     description!:string
 
-    @Property()
+    @Property({type:"text"})
     code!:string
 
-    @Property()
+    @Property({type:"date"})
     createdAt:Date=new Date()
 }
