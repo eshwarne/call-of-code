@@ -21,19 +21,19 @@ __decorate([
     __metadata("design:type", Number)
 ], CodeSnippets.prototype, "id", void 0);
 __decorate([
-    core_1.Property(),
+    core_1.Property({ type: "text" }),
     __metadata("design:type", String)
 ], CodeSnippets.prototype, "title", void 0);
 __decorate([
-    core_1.Property(),
+    core_1.Property({ type: "text" }),
     __metadata("design:type", String)
 ], CodeSnippets.prototype, "description", void 0);
 __decorate([
-    core_1.Property(),
+    core_1.Property({ type: "text" }),
     __metadata("design:type", String)
 ], CodeSnippets.prototype, "code", void 0);
 __decorate([
-    core_1.Property(),
+    core_1.Property({ type: "date" }),
     __metadata("design:type", Date)
 ], CodeSnippets.prototype, "createdAt", void 0);
 CodeSnippets = __decorate([
